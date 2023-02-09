@@ -52,36 +52,46 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let tcountMonths = countMonths;
   countMonths = +countMonths;
   if(isNaN(percent)){
-    return `Параметр percent содержит неправильное значение ${tpercent}`
+    // return `Параметр percent содержит неправильное значение ${tpercent}`;
+    return false;
   }
 
   if(percent < 0 || percent >100){
-    return `Параметр percent содержит неправильное значение ${tpercent}`
+    // return `Параметр percent содержит неправильное значение ${tpercent}`;
+    return false;
   }
 
   if(isNaN(contribution)){
-    return `Параметр contribution содержит неправильное значение ${tcontribution}`
+    // return `Параметр contribution содержит неправильное значение ${tcontribution}`;
+    return false;
   }
   if(contribution < 0){
-    return `Параметр contribution содержит неправильное значение ${tcontribution}`
+    // return `Параметр contribution содержит неправильное значение ${tcontribution}`;
+    return false;
   }
   if(isNaN(amount)){
-    return `Параметр amount содержит неправильное значение ${tamount}`
+    // return `Параметр amount содержит неправильное значение ${tamount}`;
+    return false;
   }
   if(amount < 0){
-    return `Параметр amount содержит неправильное значение ${tamount}`
+    // return `Параметр amount содержит неправильное значение ${tamount}`;
+    return false;
   }
   if(isNaN(countMonths)){
-    return `Параметр countMonths содержит неправильное значение ${tcountMonths}`
+    // return `Параметр countMonths содержит неправильное значение ${tcountMonths}`;
+    return false;
   }
   if(countMonths < 0){
-    return `Параметр countMonths содержит неправильное значение ${tcountMonths}`
+    // return `Параметр countMonths содержит неправильное значение ${tcountMonths}`;
+    return false;
   }
   if(!Number.isInteger(countMonths)){
-    return `Параметр countMonths содержит неправильное значение ${tcountMonths}`
+    // return `Параметр countMonths содержит неправильное значение ${tcountMonths}`;
+    return false;
   }
   if(contribution > amount){
-    return 'Аргумент "contribution" не должен быть больше чем "amount".'
+    // return 'Аргумент "contribution" не должен быть больше чем "amount".';
+    return false;
   }
   let s = amount - contribution;
   let p = percent / 1200;
