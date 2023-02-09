@@ -83,12 +83,12 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   if(contribution > amount){
     return 'Аргумент "contribution" не должен быть больше чем "amount".'
   }
-  let S = amount - contribution;
-  let P = percent / 1200;
+  let s = amount - contribution;
+  let p = percent / 1200;
   // выдавать сумму, которую в итоге заплатит клиент
   // (первоначальный взнос, погашение основного долга, проценты за пользование кредитом).
   // Первоначальный взнос платят когда берут кредит и поптом по числу месяцев платят сумму из формулы
-  let total = contribution + S * (P + (P / (((1 + P) ** countMonths) - 1))) * countMonths;
+  let total = contribution + s * (p + (p / (((1 + p) ** countMonths) - 1))) * countMonths;
   // округлим и вернем результат
   return Math.round(100 * total) / 100;
 }
