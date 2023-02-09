@@ -90,5 +90,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   // Первоначальный взнос платят когда берут кредит и поптом по числу месяцев платят сумму из формулы
   let total = contribution + s * (p + (p / (((1 + p) ** countMonths) - 1))) * countMonths;
   // округлим и вернем результат
-  return Math.round(100 * total) / 100;
+  total = Math.round(100 * total) / 100;
+  console.log(total);
+  return total;
 }
