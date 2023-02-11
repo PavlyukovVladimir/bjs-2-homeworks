@@ -295,7 +295,7 @@ class Student {
     const arr = this.marks[subjectName];
     return arr.reduce(
         (previousValue, currentValue) => {
-          previousValue + currentValue;
+          return previousValue + currentValue;
         }
         , 0) / arr.length;
   }
