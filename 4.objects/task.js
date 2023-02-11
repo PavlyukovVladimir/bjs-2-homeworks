@@ -18,8 +18,8 @@ Student.prototype.addMarks = function (...marks) {
 }
 
 Student.prototype.getAverage = function () {
-    if ('marks' in this && this.marks.length >= 0) {
-        return this.marks.reduce((average, mark, _, marks) => average + mark / marks.length, 0);
+    if ('marks' in this && this.marks.length > 0) {
+        return this.marks.reduce((average, mark, _, marks) => average + mark, 0) / marks.length;
     }
     return 0;
 }
